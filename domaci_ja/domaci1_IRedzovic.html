@@ -1,0 +1,58 @@
+<!-- Korisnik u input polje unosi broj bodova koje je osvojio na ispitu (izmedju 0 i 100).
+Preko switch naredbe odraditi da ako korisnik ima 0-50 poena pise "Niste polozili"; 
+za 51-60 poena, pise "Ocena 6",
+za 61-70 poena, pise "Ocena 7", 
+...
+za 91-100 bodova, pise "Ocena 10".
+Ubaciti uslov koji proverava da li je korisnik uneo neku vrednost koja nije broj (NaN) 
+pre nego krenete sa ostatkom zadatka. Ukoliko jeste, neka se ispise poruka o gresci. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ispit() {
+            var ocena;
+            let inp = document.getElementById("input").value;
+            if (inp >= 0 && inp <= 100) {
+                switch (true) {
+                    case (inp < 51):
+                        ocena = "niste polozili ispit!"
+                        break;
+                    case (inp < 61):
+                        ocena = "Ocena je: 6";
+                        break;
+                    case (inp < 71):
+                        ocena = "Ocena je: 7";
+                        break;
+                    case (inp < 81):
+                        ocena = "Ocena je: 8";
+                        break;
+                    case (inp < 91):
+                        ocena = "Ocena je: 9";
+                        break;
+                    case (inp <= 100):
+                        ocena = "Ocena je: 10";
+                        break;
+                }
+                document.getElementById("ocena").innerHTML = ocena;
+            } else {
+                document.getElementById("ocena").innerHTML = ("Nije unet validan broj! Pokusajte ponovo!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p>Unesite broj bodova:</p>
+    <input type="text" placeholder="od 0 do 100" id="input">
+    <button onclick="ispit()">submit</button>
+    <p id="ocena"></p>
+</body>
+
+</html>

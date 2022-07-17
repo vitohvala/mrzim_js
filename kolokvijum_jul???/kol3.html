@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolokvijum-3</title>
+    <style>
+/* mrzi me da radim ista ovde */
+        .slika{
+            height: 150px;
+        }
+        .main{
+            border: 2px solid black;
+            display: flex;
+            height: 150px;
+            width: 400px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="da">
+    <label for="">Naziv Knjige</label><br>
+    <input type="text" id="naziv"><br>
+    <label for="">Autor Knjige</label><br>
+    <input type="text" id="autor"><br>
+    <label for="">Godina Izdanja</label><br>
+    <input type="text" id="godina"><br><br>
+    <p id="daa"></p>
+    <button onclick="kol()">DUGME</button><br>
+    </div>
+    <script>
+        function kol(){
+        var kontainer = document.getElementById("da");
+        var naziv = document.getElementById("naziv").value;
+        var autor = document.getElementById("autor").value;
+        var godina = document.getElementById("godina").value;
+        var blok= document.createElement("div");
+        blok.className= "main";
+        let img = document.createElement("img");
+            img.src = "ksgrandom.jpg";
+            img.className = "slika";
+        var niz=[naziv, autor, godina];
+        if(isNaN(godina)==false && godina.length>=3){
+        for(let i=0; i<niz.length; i++){
+            let ul = document.createElement("ul");
+            let li = document.createElement("li");
+            li.className = "li";
+            ul.className = "ul";
+            let txtNode = document.createTextNode(niz[i]);
+            li.appendChild(txtNode);
+            ul.appendChild(li);
+            blok.appendChild(ul);
+        }
+        blok.appendChild(img);
+        kontainer.appendChild(blok);
+    }
+    else document.getElementById("daa").innerHTML = "Unesite ispravne podatke";
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolokvijum-2</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        var email = /^\w+\(([1-9]{2}[5])\)[\._-]{1}\w{2}@[\w+\.]?\w+\.\w{2,4}$/;
+        var tekst= prompt("Unesite e-mail adresu ");
+        if(tekst.match(email)!=null) {
+            document.getElementsByTagName("p")[0].style.color = "green";
+            document.getElementsByTagName("p")[0].innerHTML = "Ispravno unet e-mail";
+        }
+        else{
+            document.getElementsByTagName("p")[0].style.color = "red";
+            document.getElementsByTagName("p")[0].style.color = "Greska u unosu";
+        }
+
+    </script>
+</body>
+</html>

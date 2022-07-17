@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul id="lista"></ul>
+    <script>
+        var predmet = {
+                nazivPredmeta: "IT",
+                imeProfesora: "Petar Petrovic",
+                ocena: 10
+            }
+            var predmet2 = {
+                nazivPredmeta: "Ekonomija",
+                imeProfesora: "Petar Petrovic",
+                ocena: 9
+            }
+            var predmet3 = {
+                nazivPredmeta: "matematika",
+                imeProfesora: "Petar Petrovic",
+                ocena:6
+            }
+            var predmet4 = {
+                nazivPredmeta: "osnovi informatike",
+                imeProfesora: "Petar Petrovic",
+                ocena: 7
+            }
+            var niz = [predmet, predmet2, predmet3, predmet4];
+            var ul = document.getElementById("lista");
+            var li0 = document.createElement("li");
+            var li1 = document.createElement("li");
+            var li2 = document.createElement("li");
+
+
+  
+
+            for (let i = 0; i < niz.length; i++){
+                var ul = document.getElementById("lista");
+                var li0 = document.createElement("li");
+                var li1 = document.createElement("li");
+                var li2 = document.createElement("li");
+                let txtNode1 = document.createTextNode(niz[i].nazivPredmeta);
+                let txtNode2 = document.createTextNode(niz[i].imeProfesora);
+                let txtNode3 = document.createTextNode(niz[i].ocena);
+                li0.appendChild(txtNode1);
+                li1.appendChild(txtNode2);
+                li2.appendChild(txtNode3);
+                ul.appendChild(li0);
+                ul.appendChild(li1);
+                ul.appendChild(li2);
+            }
+    </script>
+</body>
+</html>

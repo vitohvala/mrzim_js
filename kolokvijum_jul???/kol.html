@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolokvijum-1</title>
+</head>
+<body>
+    <p id="da"></p>
+    <p id="daa"></p>
+    <script> 
+        function prosek(niz){
+        var s=0, br=0;
+            for(let i=0; i<niz.length; i++){
+                if(niz[i]>5 && niz[i]<=10 && isNaN(niz[i])==false ){ 
+                    s+=Number(niz[i]); 
+                    br++; // povecavamo svaki put kada ispunimo uslov za 1
+                }
+            }
+            s=s/br;
+            return s;
+        } 
+        function sort(niz){
+         for(let i=0; i<niz.length; i++)
+           if(isNaN(niz[i])==true) { // proveravamo da li u nizu ima elemenata koji nisu brojevi
+            delete niz[i]; // ako je nadjen, brisemo
+            niz.length--; //smanjujemo velicinu niza za broj elemenata koji su obrisani
+        }
+            niz.sort(function(a, b){return a-b}); //sortiranje
+            niz.splice(3, 0, 9);//u nizu na indeksu 3. koristeci odgovarajucu funkciju dodati ocenu 9?
+        return niz;
+        }
+        var ocene = prompt("Ocene: [najmanje 5]");
+        let niz = ocene.split(" ");
+        if(niz.length>=5 ){
+            document.getElementById("da").innerHTML= "Prosek ocena je: " + prosek(niz);
+            document.getElementById("daa").innerHTML= "Sortirani niz je: " + sort(niz);
+        }  
+
+    </script>
+</body>

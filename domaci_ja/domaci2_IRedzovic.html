@@ -1,0 +1,84 @@
+<!-- 1. Korisnik preko prompt-a unosi neki broj.
+Treba da postoje 4 dugmica: "Povrsina kruga", "Obim kruga", "Povrsina kvadrata", 
+"Obim kvadrata". U zavisnosti od toga na sta korisnik klikne, 
+treba da se ispisuje odgovarajuci rezultat, odnosno da se izracuna obim ili 
+povrsina kruga ili kvadrata. 
+Ako korisnik klikne na povrsinu ili obim kruga, za broj koji je korisnik uneo 
+cemo smatrati da je poluprecnik. Ako klikne na obim ili povrsinu kvadrata, 
+smatracemo da je broj koji je korisnik uneo duzina stranice kvadrata. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pKrug() {
+            let broj = prompt("Unesite poluprecnik: ");
+            const PI = 3.14;
+            let rezultat = broj * broj * PI;
+            document.getElementById("rez").innerHTML = ("Povrsina kruga je: ") + rezultat;
+        }
+
+        function oKrug() {
+            let broj = prompt("Unesite poluprecnik: ");
+            const PI = 3.14;
+            let rezultat = 2 * broj * PI;
+            document.getElementById("rez").innerHTML = ("Obim kruga je: ") + rezultat;
+        }
+
+        function pKvadrat() {
+            let broj = prompt("Unesite duzinu stranice kvadrata: ");
+            let rezultat = broj * broj;
+            document.getElementById("rez").innerHTML = ("Povrsina kvadrata je: ") + rezultat;
+        }
+
+        function oKvadrat() {
+            let broj = prompt("Unesite duzinu stranice kvadrata: ");
+            let rezultat = 4 * broj;
+            document.getElementById("rez").innerHTML = ("Obim kvadrata je: ") + rezultat;
+        }
+
+        function ispit() {
+            var ocena;
+            let inp = document.getElementById("input").value;
+            if (inp >= 0 && inp <= 100) {
+                switch (true) {
+                    case (inp < 51):
+                        ocena = "Niste polozili ispit."
+                        break;
+                    case (inp < 61):
+                        ocena = "Ocena je: 6";
+                        break;
+                    case (inp < 71):
+                        ocena = "Ocena je: 7";
+                        break;
+                    case (inp < 81):
+                        ocena = "Ocena je: 8";
+                        break;
+                    case (inp < 91):
+                        ocena = "Ocena je: 9";
+                        break;
+                    case (inp <= 100):
+                        ocena = "Ocena je: 10";
+                        break;
+                }
+                document.getElementById("ocena").innerHTML = ocena;
+            } else {
+                document.getElementById("ocena").innerHTML = ("Nije unet validan broj bodova! Pokusajte ponovo!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="pKrug()">Povrsina kruga</button>
+    <button onclick="oKrug()">Obim kruga</button>
+    <button onclick="pKvadrat()">Povrsina kvadrata</button>
+    <button onclick="oKvadrat()">Obim kvadrata</button>
+    <p id="rez"></p>
+</body>
+
+</html>

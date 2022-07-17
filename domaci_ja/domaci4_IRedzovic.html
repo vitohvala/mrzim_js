@@ -1,0 +1,54 @@
+<!-- 1. Kreirati klasu Pravougaonik koja od atributa ima duzinu a i duzinu b, stranice pravougaonika. 
+    Klasa za metode ima: 
+- metodu koja ispisuje vrednosti strana ispisDimenzija(),
+- metodu koja racuna povrsinu kvadrata.
+Klasa sadrzi konstruktor sa argumentima.
+Kreirati 2 <p> taga. Klasa sadrzi metodu koja pomocu getElementsByTagName hvata p tagove i 
+    ispisuje ispisDimenzija() u prvom paragrafu, povrsinaKvadrata() u drugom paragrafu. 
+    Prvi paragraf treba da bude ispisan slovima plave boje, a drugi treba da ima plavu pozadinu.
+Kreirati jedno dugme na ciji ce se klik pozivati ta funkcija i ispisivati ih. 
+Kreirati jedan objekat ove klase i ispisati podatke u paragrafima. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p></p>
+    <p></p>
+    <button onclick="ispis()">pozovi</button>
+    <script>
+        class Pravougaonik {
+            constructor(duzinaa = 5, duzinab = 3) {
+                this.dA = duzinaa;
+                this.db = duzinab;
+            }
+            ispisdimenzija() {
+                document.getElementsByTagName("p")[0].style.color = "blue";
+                document.getElementsByTagName("p")[1].style.background = "blue";
+                document.getElementsByTagName("p")[0].innerHTML = "duzina stranice a = " + this.dA + (" b = ") + this.db;
+
+            }
+            povrsinap() {
+                let a = this.dA;
+                let b = this.db;
+                let r = a * b;
+                document.getElementsByTagName("p")[1].innerHTML = "povrsina je " + r;
+            }
+        }
+
+        function ispis() {
+            var prav = new Pravougaonik();
+            prav.ispisdimenzija();
+            prav.povrsinap();
+        }
+    </script>
+</body>
+
+</html>
